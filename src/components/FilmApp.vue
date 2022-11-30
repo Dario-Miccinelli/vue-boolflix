@@ -17,6 +17,7 @@
 
               <h6 class="ms-1 mt-3">{{ card.title }}</h6>
               <p class="text-secondary ms-1">Titolo originale: {{ card.original_title }}</p>
+              <p>FILM</p>
               <p class="text-secondary">{{card.overview}}</p>
 
 

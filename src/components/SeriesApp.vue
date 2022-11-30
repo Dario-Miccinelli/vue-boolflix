@@ -14,9 +14,10 @@
 
 
             <div id="hidden">
-
+                
                 <h6 class="ms-1 mt-3">{{ card2.name }}</h6>
                 <p class="text-secondary ms-1">Titolo originale: {{ card2.original_name }}</p>
+                <p>SERIE TV</p>
                 <p class="text-secondary">{{card2.overview}}</p>
 
 

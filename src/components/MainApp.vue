@@ -47,8 +47,11 @@ export default {
  width: 90%;
  }
 
+
+
 .gap {
-  gap: 10px;
+  gap: 5px;
+  
  
 
   

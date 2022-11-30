@@ -1,9 +1,9 @@
 <template>
   <div id="app">
    
-    <HeaderComp @emit="nomeMethods" />
-    <button class="custom d-flex p-1 bg-danger" @click="getFilm()">Cerca Film</button>
-    <button class="custom2 d-flex p-1 bg-danger" @click="getSeries()">Cerca Serie</button>
+    <HeaderComp @emit="nomeMethods"/>
+    <button class="custom d-flex p-1 bg-danger" @click="getFilm()">Cerca solo Film</button>
+    <button class="custom2 d-flex p-1 bg-danger" @click="getSeries()">Cerca solo Serie TV</button>
     <MainApp :card="apiInfo" :card2="apiSeriesInfo"/>
   </div>
 </template>
@@ -45,6 +45,9 @@ export default {
   nomeMethods(valoreEmesso) {
 
     this.valoreEmit = valoreEmesso
+    
+    this.getFilm();
+    this.getSeries();
 
 
   },
@@ -85,7 +88,7 @@ export default {
 
 * {
   background-color: black;
- 
+
   color: white;
  }
 
@@ -97,7 +100,7 @@ export default {
 
  .custom2 {
   position: relative;
-  left: 25.8rem;
-  bottom: 7.9rem;
+  left: 27.8rem;
+  bottom: 7.95rem;
  }
 </style>
