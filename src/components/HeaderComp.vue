@@ -5,7 +5,7 @@
         
         <input  v-model="ricerca" 
         @keyup="$emit('emit' , ricerca ) "
-        type="text" placeholder="Search a Film" 
+        type="text" placeholder="Search a film or a series" 
         class="w-25 h-25  customx">
      
     </div>
@@ -19,6 +19,7 @@ export default {
   name: 'HeaderComp',
 
   props: {
+   
   },
   
   data() {
@@ -32,6 +33,8 @@ export default {
 
   
   <style scoped lang="scss">
+
+
 
   img {
     width: 15%;

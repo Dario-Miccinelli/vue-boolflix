@@ -1,9 +1,10 @@
 <template>
   <div id="app">
    
-    <HeaderComp @emit="nomeMethods"/>
-    <button class="custom d-flex p-1 bg-danger" @click="getFilm() ">Cerca Film</button>
-    <MainApp :card="apiInfo"/>
+    <HeaderComp @emit="nomeMethods" />
+    <button class="custom d-flex p-1 bg-danger" @click="getFilm()">Cerca Film</button>
+    <button class="custom2 d-flex p-1 bg-danger" @click="getSeries()">Cerca Serie</button>
+    <MainApp :card="apiInfo" :card2="apiSeriesInfo"/>
   </div>
 </template>
 
@@ -27,6 +28,7 @@ export default {
   data() {
     return {
       apiInfo: {},
+      apiSeriesInfo: {},
       valoreEmit:"",
       
       
@@ -56,6 +58,13 @@ export default {
         })
       
 
+  },
+
+  getSeries() {
+    axios.get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=' + this.valoreEmit)
+    .then((response) => {
+      this.apiSeriesInfo = response.data.results
+    })
   }
 
  }
@@ -74,15 +83,21 @@ export default {
 
 <style lang="scss">
 
- #app {
+* {
   background-color: black;
-  height: 250vh;
+ 
   color: white;
  }
 
  .custom {
   position: relative;
-  left: 20rem;
+  left: 19.8rem;
   bottom: 5.7rem;
+ }
+
+ .custom2 {
+  position: relative;
+  left: 25.8rem;
+  bottom: 7.9rem;
  }
 </style>
