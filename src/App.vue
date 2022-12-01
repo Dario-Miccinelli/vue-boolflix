@@ -2,9 +2,11 @@
   <div id="app">
    
     <HeaderComp @emit="nomeMethods"/>
-    <button class="custom d-flex p-1 bg-danger" @click="getFilm()">Cerca solo Film</button>
-    <button class="custom2 d-flex p-1 bg-danger" @click="getSeries()">Cerca solo Serie TV</button>
-    <MainApp :card="apiInfo" :card2="apiSeriesInfo"/>
+    <!-- <button class="custom d-flex p-1 bg-danger" @click="getFilm()">Cerca solo Film</button>
+    <button class="custom2 d-flex p-1 bg-danger" @click="getSeries()">Cerca solo Serie TV</button> -->
+    
+    <MainApp 
+    :card="apiInfo" :card2="apiSeriesInfo"/>
   </div>
 </template>
 

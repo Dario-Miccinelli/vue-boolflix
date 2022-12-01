@@ -9,7 +9,7 @@
             <img class="not-found imgx" id="show" v-if="card2.backdrop_path === null"
                 src="http://m.gettywallpapers.com/wp-content/uploads/2021/09/Black-Wallpaper-HD-576x1024.jpg"
                 alt="posterNotAvaible">
-            <img id="show" v-else :src="`http://image.tmdb.org/t/p/w780/${card2.backdrop_path}`">
+            <img id="show" v-else :src="`http://image.tmdb.org/t/p/w1280/${card2.backdrop_path}`">
 
 
 
@@ -25,7 +25,9 @@
                 <img v-if="lingue.includes(card2.original_language)" :src="`/flags/${card2.original_language}.png`"
                     alt="flags" class="flags mt-3" />
                 <span class="text-uppercase mt-3" v-else>Original Lang:{{ card2.original_language }}</span>
-                <span class="ms-3 mt-3 text-danger">average vote: {{ card2.vote_average }} </span>
+                <!-- <span class="ms-3 mt-3 text-danger">average vote: {{ card2.vote_average }} </span> -->
+
+                <StarsVote :vote="card2.vote_average"/>
             </div>
         </div>
 
@@ -40,10 +42,12 @@
 </template>
 
 <script>
+import StarsVote from "./StarsVote.vue";
 
 export default {
     name: "SeriesApp",
     components: {
+        StarsVote
 
     },
     props: {
@@ -65,35 +69,25 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-    padding: 0.5rem;
-    width: 420px;       
+    
+    width: 445px;   
+    height: 470px;   
     text-align: center;
   
     border: 1px solid #0c0c0d;
 
-
-    .imgx {
-        width: 350px;
-        height: 600px;
+    .font {
+        font-size: 0.8rem;
+        text-align: center;
+       
     }
-
-    
-
-    
-
+ 
+ 
+ 
     .flags {
-     width: 50px;
+     width: 45px;
     }
-    .disnone {
 
-        
-
-        &:hover {
-            filter: alpha(opacity=40);
-            opacity: 0.5;
-        }
-
-    }
 
    
 
@@ -110,7 +104,10 @@ export default {
 
     .film-details {
         cursor: pointer;
-        height: 390px;
+
+       
+       
+        
       
    
     }
@@ -123,7 +120,9 @@ export default {
 
         #hidden {
             display: block;
-            line-height: 18px;
+            line-height: 17px;
+            padding: 2rem;
+           
         }
 
     }
