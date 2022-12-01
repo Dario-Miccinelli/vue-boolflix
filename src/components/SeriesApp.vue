@@ -69,64 +69,66 @@ export default {
 
 <style lang="scss" scoped>
 .box {
+
+text-align: center;
+width: 550px;
+
+
+
+
+
+
+.flags {
+ width: 45px;
+ height: 45px;
+}
+
+
+
+img {
     
-    width: 445px;   
-    height: 470px;   
-    text-align: center;
-  
-    border: 1px solid #0c0c0d;
+    width: 525px;
+    height: 500px;
+    
+}
 
-    .font {
-        font-size: 0.8rem;
-        text-align: center;
-       
-    }
- 
- 
- 
-    .flags {
-     width: 45px;
-    }
-
+#hidden {
+    display: none;
+    width: 500px;
+    height: 390px;
+    
 
    
+    
+ 
+}
 
+.film-details {
+    cursor: pointer;
+  
+    
+  
 
-    img {
-        object-fit: fill;
-        width: 100%;
-        height: 100%;
-    }
+}
 
-    #hidden {
+&:hover .film-details {
+
+    #show {
         display: none;
     }
 
-    .film-details {
-        cursor: pointer;
-
-       
-       
+    #hidden {
+        display: block;
+        line-height: 15px;
         
-      
-   
+       
     }
 
-    &:hover .film-details {
+}
 
-        #show {
-            display: none;
-        }
 
-        #hidden {
-            display: block;
-            line-height: 17px;
-            padding: 2rem;
-           
-        }
 
-    }
 
-   
+
 }
 </style>
